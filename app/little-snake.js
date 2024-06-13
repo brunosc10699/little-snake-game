@@ -1,6 +1,3 @@
-// Cherry food image
-const cherry = document.getElementById('cherry');
-
 // Get the canvas element and its context
 let canvas = document.getElementById('game');
 let context = canvas.getContext('2d');
