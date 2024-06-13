@@ -1,3 +1,6 @@
+// Cherry food image
+const cherry = document.getElementById('cherry');
+
 // Get the canvas element and its context
 let canvas = document.getElementById('game');
 let context = canvas.getContext('2d');
@@ -34,8 +37,7 @@ function createSnake() {
 
 // Function to draw the food
 function drawFood() {
-    context.fillStyle = "red";
-    context.fillRect(food.x, food.y, box, box);
+    context.drawImage(cherry, food.x, food.y, box, box);
 }
 
 // Event listener for arrow keys to change the direction of the snake
