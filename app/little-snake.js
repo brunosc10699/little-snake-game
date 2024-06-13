@@ -116,9 +116,8 @@ function startGame() {
 
 // Function to draw the obstacles
 function drawObstacles() {
-    context.fillStyle = "blue";
     for (let i = 0; i < obstacles.length; i++) {
-        context.fillRect(obstacles[i].x, obstacles[i].y, box, box);
+        context.drawImage(punisher, obstacles[i].x, obstacles[i].y, box, box);
     }
 }
 
