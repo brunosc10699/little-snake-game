@@ -34,8 +34,9 @@ function createBG() {
 // Function to draw the snake
 function createSnake() {
     for (i = 0; i < snake.length; i++) {
-        context.fillStyle = "green";
-        context.fillRect(snake[i].x, snake[i].y, box, box);
+        context.drawImage(snaketexture, snake[i].x, snake[i].y, box, box);
+        // context.fillStyle = "green";
+        // context.fillRect(snake[i].x, snake[i].y, box, box);
     }
 }
 
