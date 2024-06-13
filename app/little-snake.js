@@ -18,6 +18,13 @@ let food = {
     y: Math.floor(Math.random() * 15 + 1) * box
 }
 
+// Define the obstacles
+let obstacles = [
+    { x: 8 * box, y: 4 * box },
+    { x: 8 * box, y: 12 * box },
+    // Add more obstacles as needed
+];
+
 // Function to draw the game background
 function createBG() {
     context.fillStyle = "lightgreen";
@@ -68,9 +75,21 @@ function startGame() {
     createSnake();
     drawFood();
 
+    // Draw the obstacles
+    drawObstacles();
+
     // Move the snake in the current direction
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
+
+    // Check for collisions with obstacles
+    for (let i = 0; i < obstacles.length; i++) {
+        console.log(snakeX + ' = ' + obstacles[i].x + ' and ' + snakeY + ' = ' + obstacles[i].y);
+        if (snakeX == obstacles[i].x && snakeY == obstacles[i].y) {
+            clearInterval(game);
+            alert('Game Over :(');
+        }
+    }
 
     if (direction == "right") snakeX += box;
     if (direction == "left") snakeX -= box;
@@ -94,6 +113,14 @@ function startGame() {
     }
 
     snake.unshift(newHead);
+}
+
+// Function to draw the obstacles
+function drawObstacles() {
+    context.fillStyle = "blue";
+    for (let i = 0; i < obstacles.length; i++) {
+        context.fillRect(obstacles[i].x, obstacles[i].y, box, box);
+    }
 }
 
 // Start the game loop
