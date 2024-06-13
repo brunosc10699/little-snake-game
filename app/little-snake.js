@@ -37,7 +37,7 @@ function createSnake() {
 
 // Function to draw the food
 function drawFood() {
-    context.drawImage(cherry, food.x, food.y, box, box);
+    context.drawImage(rat, food.x, food.y, box, box);
 }
 
 // Event listener for arrow keys to change the direction of the snake
