@@ -6,12 +6,11 @@ body {
     background-color: #000;
 }
 
-.food {
+.food, .textures, .obstacles {
     display: none;
-}
-
-.textures {
-    display: none;
+    background-color: lightgreen;
+    padding: 20px;
+    margin: 10px;
 }
 
 #game {
