@@ -25,6 +25,9 @@ let obstacles = [
     // Add more obstacles as needed
 ];
 
+// Initialize the score
+let score = 0;
+
 // Function to draw the game background
 function createBG() {
     context.fillStyle = "lightgreen";
@@ -77,6 +80,9 @@ function startGame() {
     // Draw the obstacles
     drawObstacles();
 
+    // Draw the score
+    drawScore();
+
     // Move the snake in the current direction
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
@@ -103,6 +109,8 @@ function startGame() {
         // If yes, generate new food and don't remove the tail
         food.x = Math.floor(Math.random() * 15 + 1) * box;
         food.y = Math.floor(Math.random() * 15 + 1) * box;
+        // Increment the score
+        score += 100;
     }
 
     // Add a new head to the snake
@@ -119,6 +127,13 @@ function drawObstacles() {
     for (let i = 0; i < obstacles.length; i++) {
         context.drawImage(punisher, obstacles[i].x, obstacles[i].y, box, box);
     }
+}
+
+// Function to draw the score
+function drawScore() {
+    context.fillStyle = "black";
+    context.font = "20px Arial";
+    context.fillText("Score: " + score, box, box);
 }
 
 // Start the game loop
