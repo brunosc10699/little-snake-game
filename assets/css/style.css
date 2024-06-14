@@ -1,9 +1,36 @@
+@font-face {
+    font-family: 'CursedTimerUlil-Aznm';
+    src: url('../fonts/CursedTimerUlil-Aznm.ttf') format('truetype');
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #000;
+}
+
+.scoreboard {
+    align-self: flex-start;
+    padding: 10px;
+    margin: 20px;
+    background-color: #000;
+}
+
+.score-title {
+    font-family: 'Comic Sans MS';
+    font-size: 30px;
+    color: #fff;
+    margin: 0;
+}
+
+#score {
+    font-family: 'CursedTimerUlil-Aznm';
+    font-size: 20px;
+    color: #fff;
+    margin-top: 10px;
+    padding: 10px;
 }
 
 .food, .textures, .obstacles {

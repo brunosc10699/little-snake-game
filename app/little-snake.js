@@ -89,7 +89,6 @@ function startGame() {
 
     // Check for collisions with obstacles
     for (let i = 0; i < obstacles.length; i++) {
-        console.log(snakeX + ' = ' + obstacles[i].x + ' and ' + snakeY + ' = ' + obstacles[i].y);
         if (snakeX == obstacles[i].x && snakeY == obstacles[i].y) {
             clearInterval(game);
             alert('Game Over :(');
@@ -131,9 +130,8 @@ function drawObstacles() {
 
 // Function to draw the score
 function drawScore() {
-    context.fillStyle = "black";
-    context.font = "20px Arial";
-    context.fillText("Score: " + score, box, box);
+    let scoreboard = document.getElementById('score');
+    scoreboard.innerHTML = score;
 }
 
 // Start the game loop
